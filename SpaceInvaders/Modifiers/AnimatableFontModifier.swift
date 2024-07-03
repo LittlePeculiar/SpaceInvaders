@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct AnimatableFontModifier: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+// A modifier that animates a font through various sizes.
+struct AnimatableFontModifier: ViewModifier, Animatable {
+    var size: CGFloat
+    var animatableSize: CGFloat {
+        get { size }
+        set { size = newValue }
     }
-}
-
-struct AnimatableFontModifier_Previews: PreviewProvider {
-    static var previews: some View {
-        AnimatableFontModifier()
+    
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: size))
     }
 }

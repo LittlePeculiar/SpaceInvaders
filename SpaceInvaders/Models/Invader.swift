@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class Invader: GameItem {
+    var imageName: String
+    
+    init(position: CGPoint, imageName: String = "alien") {
+        self.imageName = imageName
+        
+        super.init(position: position)
+    }
+}

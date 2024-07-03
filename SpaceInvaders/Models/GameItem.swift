@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class GameItem: Identifiable {
+    var id: String = UUID().uuidString
+    var position: CGPoint
+    
+    init(position: CGPoint) {
+        self.position = position
+    }
+}
+
